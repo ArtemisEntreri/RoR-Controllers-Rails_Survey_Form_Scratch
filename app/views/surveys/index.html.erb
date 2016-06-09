@@ -1,0 +1,67 @@
+<form action="surveys/check" method="post">
+  <% if @errors
+    @errors.each do |error| %>
+    <p class="red"><%= error %></p>
+    <% end %>
+  <% end %>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <p class="info">Your Name: </p><p class="info"><input type="text" name="dojo[name]"></p>
+  <p class="info">Dojo Location: </p>
+  <p class="info">
+    <select name="dojo[location]">
+      <option value="Mountian View">Mountian View</option>
+      <option value="Bellevue">Bellevue</option>
+      <option value="New York">New York</option>
+    </select>
+  </p>
+  <p class="info">Favorite Language: </p>
+  <p class="info">
+    <select name="dojo[language]">
+      <option value="JavaScript">JavaScript</option>
+      <option value="PHP">PHP</option>
+      <option value="Ruby">Ruby</option>
+    </select>
+  </p>
+  <p class="info">Comment (optional): </p>
+  <textarea name="dojo[comment]"></textarea>
+  <input class="button" type="submit" value="Submit">
+</form>
+
+
+--------------------------------------------------
+CodingDojo Answersheet
+
+<div id="container">
+  <form action='/survey' method='post'>
+      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+      <div>
+        <label>Your Name:</label>
+        <input type='text' name='survey[name]'>
+      </div>
+      <div>
+        <label>Dojo Location:</label>
+        <select name="survey[location]" class="select">
+        <option value="Mountain Valley, Ca">Mountain Valley, SV</option>
+        <option value="San Diego, Ca">San Diego, Ca</option>
+        <option value="Seattle, Phoenix">Seattle, Pheonix</option>
+        <option value="San Jose, Ca">San Jose, Ca</option>
+      </select>
+      </div>
+    <div>
+      <label>Favorite language:</label>
+      <select name="survey[language]" class="select">
+        <option value="Javascript">Javascript</option>
+        <option  value="PHP">PHP</option>
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+      </select>
+    </div>
+    <div>
+      <label>Comment:</label>
+      <textarea rows="4" cols="35" name="survey[comment]"></textarea>
+    </div>
+    <div>
+      <input type='submit' value='Submit'>
+    </div>
+    </form>
+</div>   

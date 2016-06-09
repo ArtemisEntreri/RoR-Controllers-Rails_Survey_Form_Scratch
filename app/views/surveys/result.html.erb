@@ -1,0 +1,11 @@
+<div class="submitted">
+	<p>Thanks for submitting the form!  You have submitted this form <%= @count %> time(s) now.</p>
+</div>
+<div class="information">
+	<h1>Submitted Information:</h1>
+	<p class="info">Name: </p><p class="info"><%= @student[:name] %></p>
+	<p class="info">Dojo Location: </p><p class="info"><%= @student[:location] %></p>
+	<p class="info">Favorite Language: </p><p class="info"><%= @student[:language] %></p>
+	<p class="info">Comment: </p><p class="info"><%= @student[:comment] %></p>
+	<a href="/"><buttonclass="button">Go Back!</button></a>
+</div>
